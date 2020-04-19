@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Release Notes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/release.css">
+</head>
+
+<body>
+    <div class="header">
+        DASHBOARD
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3" id="leftCol">
+                <div id="sidebar">
+                    <h1 class="text">Version Release Notes</h1>
+                    <ul class="nav nav-stacked">
+                        <li><a href="#ver1">Version 1</a></li>
+                        <li><a href="#ver2">Version 2</a></li>
+                        <li><a href="#ver3">Version 3</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9" id="mainCol">
+                <div class="wrapper">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="notes.js"></script>
+    <script>
+        var htmlText = data.map(function (o) {
+            return `
+            <div id="${o.id}">
+                        <p class="version">Version: ${o.version}</p>
+                        <p class="created"> <span class="wrapper-list">Created:</span> <span class="wrapper-content">${o.created}</span> </p>
+                        <p class="updated"> <span class="wrapper-list">Last updated:</span><span class="wrapper-content">  ${o.lastupdate}</span></p>
+                        <p class="new"><span class="wrapper-list"> What's New:</span><span class="wrapper-content"> ${o.whats_new}</span></p>
+                        <p class="bug"> <span class="wrapper-list"> Bug Fixes:</span><span class="wrapper-content"> ${o.bug_fix}</span></p>
+                        <p class="added"> <span class="wrapper-list"> What's Added:</span> <span class="wrapper-content">${o.whats_add}</span></p>
+                    </div>
+                `;
+        });
+        $('.wrapper').append(htmlText);
+    </script>
+    <script>
+        var $body = $(document.body);
+        $("#leftCol a").on('click', function (event) {
+
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash; $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+                    window.location.hash = hash;
+                });
+            }
+        });
+        var navHeight = $('.navbar').outerHeight(true) + 10;
+
+        $('#sidebar').affix({
+            offset: {
+
+                bottom: navHeight
+            }
+        });
+
+        $body.scrollspy({
+            target: '#leftCol',
+            offset: navHeight
+        });
+    </script>
+</body>
+
+</html>

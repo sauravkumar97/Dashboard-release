@@ -1,0 +1,117 @@
+@font-face {
+  font-family: 'avenir';
+  src: url('../fonts/AvenirNext-Regular.ttf');
+}
+
+.header {
+  color: #000033;
+  font-size: 22px;
+  font-family: 'avenir';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: underline;
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+.icon-bar {
+  background-color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  #masthead h1 {
+    font-size: 100px;
+  }
+}
+
+.navbar-bright {
+  background-color: #111155;
+  color: #fff;
+}
+
+.navbar-bright a, #masthead a, #masthead .lead {
+  color: #aaaacc;
+}
+
+.navbar-bright li>a:hover {
+  background-color: #000033;
+}
+
+.affix-top, .affix {
+  position: static;
+}
+
+@media (min-width: 979px) {
+  #sidebar.affix-top {
+    position: static;
+    margin-top: 30px;
+    width: 228px;
+  }
+  #sidebar.affix-bottom {
+    position: relative;
+  }
+  #sidebar.affix {
+    position: fixed;
+    top: 70px;
+    width: 228px;
+  }
+}
+
+#sidebar li.active {
+  border: 0 #eee solid;
+  border-right-width: 4px;
+}
+
+#sidebar li li.active {
+  border: 0 #ccc solid;
+  border-right-width: 3px;
+}
+
+.text {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'avenir';
+  color: #260037;
+  margin-top: 14px;
+  word-break: break-all;
+}
+
+.nav>li>a {
+  position: relative;
+  display: block;
+  color: #696969;
+  font-size: 15px;
+  font-family: 'avenir';
+  margin-left: -14px;
+  padding: 8px 16px;
+  word-break: break-word;
+  font-weight: bold;
+}
+
+.nav>li>a:hover {
+  font-weight: bold;
+  color: #260037;
+}
+
+.content {
+  font-family: 'avenir';
+}
+
+.wrapper .version {
+  color: #260037;
+  font-weight: bold;
+  font-family: 'avenir';
+  margin-top: 40px;
+}
+
+.wrapper-content {
+  color: #260037;
+  font-family: 'avenir';
+}
+
+.wrapper-list {
+  font-family: 'avenir';
+  color: #260037;
+  font-weight: bold;
+}
